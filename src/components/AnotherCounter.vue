@@ -1,18 +1,18 @@
 <template>
   <div>
-    <p>Counter is: {{ doubleCounter }}</p>
-    <p>Number of Clicks: {{ stringCounter }}</p>
+    <button class="btn btn-primary" @click="increment">Increment</button>
+    <button class="btn btn-primary" @click="decrement">Decrement</button>
   </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapMutations } from 'vuex'
 
   export default {
-    computed: {
-      ...mapGetters([
-        'doubleCounter',
-        'stringCounter',
+    methods: {
+      ...mapMutations([
+        'increment',
+        'decrement',
       ])
     }
   }
